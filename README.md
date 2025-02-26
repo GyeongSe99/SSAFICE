@@ -190,7 +190,6 @@ $ docker compose down
 
 ⚠️ 주의 : 위 실행 방법은 서비스 구조 이해를 위한 참고용이며, SSAFY SSO, Mattermost 등 필수 서비스 연동이 없어 실제 서비스 동작은 불가능합니다.
 
-### 실제 서비스는 https://k11a605.p.ssafy.io 에서 확인하실 수 있습니다.
 
 <br>
 
