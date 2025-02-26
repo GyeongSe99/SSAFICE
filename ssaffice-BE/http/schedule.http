@@ -1,0 +1,106 @@
+### 변수 설정
+@scheduleId = 18
+@JWT = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE3MzMyOTA1MjB9.sBdiu4nH4K_B-h4pO79HA0c5OVl8jPeAwu3KLYmnZT5z6GRIPhDkEeAXmSBEbMiM4q4pslr4nPrUUwB5c2L4OA
+@noticeId = 1
+
+### 개인 일정 등록
+POST http://localhost:9090/api/schedules
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+{
+  "title": "개인 일정 테스트1",
+  "memo": "개인 일정 테스트1",
+  "startDateTime": "2024-11-13T14:44:00",
+  "endDateTime": "2024-11-29T18:00:00",
+  "remindRequests": [
+    {
+      "remindTypeCd": "ONCE",
+      "remindDateTime": "2024-11-07T15:00:00"
+    }
+  ]
+}
+
+### 관리자의 개별 일정 등록
+POST http://localhost:9090/api/schedules/admin
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+{
+  "scheduleRequest": {
+    "title": "관리자 개별 일정 테스트1",
+    "memo": "관리자 개별 일정 테스트 내용1",
+    "startDateTime": "2024-11-13T14:44:00",
+    "endDateTime": "2024-11-17T18:00:00",
+    "remindRequests": [
+      {
+        "remindTypeCd": "ONCE",
+        "remindDateTime": "2024-11-07T15:00:00"
+      }
+    ]
+  },
+  "userIds": [2, 3]
+}
+
+### 일정 수정 1
+PUT http://localhost:9090/api/schedules/{{scheduleId}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+{
+  "title": "테스트수정1",
+  "memo": "테스트내용수정1",
+  "startDateTime": "2024-11-01T12:44:00",
+  "endDateTime": "2024-11-12T16:00:00",
+  "remindRequests": [
+    {
+      "remindTypeCd": "ONCE",
+      "remindDateTime": "2024-11-07T15:00:00"
+    }
+  ]
+}
+
+### 일정 수정 2
+PUT http://localhost:9090/api/schedules/{{scheduleId}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+{
+  "enrollYn": "N"
+}
+
+### 일정 조회
+GET http://localhost:9090/api/schedules/{{scheduleId}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 일정 삭제
+DELETE http://localhost:9090/api/schedules/{{scheduleId}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+## [일정 리스트]
+### 리스트 필터용
+@filterType = createdAt
+@start = 2024-11-01T09:00:00
+@end = 2024-11-30T18:00:00
+
+### 미등록 공지 조회
+GET http://localhost:9090/api/schedules/unregistered
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 개인 일정 리스트 조회
+GET http://localhost:9090/api/schedules/my?sort=createdAt,desc&filterType={{filterType}}&start={{start}}&end={{end}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 관리자의 개별 일정 리스트 조회
+GET http://localhost:9090/api/schedules/admin/assigned?sort=createdAt,desc&filterType={{filterType}}&start={{start}}&end={{end}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 관리자의 공지 파생 일정 리스트 조회
+GET http://localhost:9090/api/schedules/admin/notices/{{noticeId}}?sort=createdAt,desc&filterType={{filterType}}&start={{start}}&end={{end}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}

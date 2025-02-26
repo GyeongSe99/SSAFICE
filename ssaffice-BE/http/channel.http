@@ -1,0 +1,5 @@
+@token = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjJAZ21haWwuY29tIiwiZXhwIjoxNzMxOTMxNzM5fQ.tIz-ZMdmVpsFk6XD0YTFOw8fI4ofU9TqDBWr0b5_y8aVvaJOl2iFNOUSOWS28fYvVdTzWQXE1bwJRMscsL6-NA
+
+GET http://localhost:9090/api/channels/ids/4
+Content-Type: application/json
+Authorization: Bearer {{token}}

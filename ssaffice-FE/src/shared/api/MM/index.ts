@@ -1,0 +1,1 @@
+export { postMmSync } from './apis'

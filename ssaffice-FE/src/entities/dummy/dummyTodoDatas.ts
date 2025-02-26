@@ -1,0 +1,111 @@
+import { ScheduleSummaries } from '@/features/manageEachTodoTab'
+
+export const dummyTodoDatas: ScheduleSummaries[] = [
+  {
+    scheduleId: 1,
+    title: 'DUMMY TODO 1',
+    createdAt: '2024-11-20T09:00:00',
+    startDateTime: '2024-11-30T10:00:00',
+    endDateTime: '2024-12-20T11:00:00',
+    scheduleSourceTypeCd: 'TEAM',
+    scheduleStatusTypeCd: 'TODO',
+    isEssentialYn: 'Y',
+    isEnrollYn: 'Y',
+    chargeUser: {
+      userId: 1,
+      name: '김철수',
+      email: 'kim@example.com',
+      profileImgUrl: 'https://example.com/images/kim-profile.jpg',
+    },
+    createUser: {
+      userId: 2,
+      name: '박영희',
+      email: 'park@example.com',
+    },
+    noticeSummary: {
+      user: {
+        userId: 3,
+        name: '이민호',
+        email: 'lee@example.com',
+      },
+      createdAt: new Date('2024-11-19T16:00:00'),
+      title: '개발팀 주간 회의 일정 안내',
+      content: '개발팀의 주간 회의가 2024년 11월 20일 오전 10시에 진행됩니다.',
+      noticeId: 1,
+      isEssential: true,
+      noticeTypeCd: 'MEETING',
+    },
+  },
+
+  {
+    scheduleId: 2,
+    title: 'DUMMY TODO 2',
+    createdAt: '2024-11-30T09:00:00',
+    startDateTime: '2024-12-01T10:00:00',
+    endDateTime: '2024-12-10T11:00:00',
+    scheduleSourceTypeCd: 'TEAM',
+    scheduleStatusTypeCd: 'IN_PROGRESS',
+    isEssentialYn: 'Y',
+    isEnrollYn: 'Y',
+    chargeUser: {
+      userId: 1,
+      name: '김철수',
+      email: 'kim@example.com',
+      profileImgUrl: 'https://example.com/images/kim-profile.jpg',
+    },
+    createUser: {
+      userId: 2,
+      name: '박영희',
+      email: 'park@example.com',
+    },
+    noticeSummary: {
+      user: {
+        userId: 3,
+        name: '이민호',
+        email: 'lee@example.com',
+      },
+      createdAt: new Date('2024-11-19T16:00:00'),
+      title: '개발팀 주간 회의 일정 안내',
+      content: '개발팀의 주간 회의가 2024년 11월 20일 오전 10시에 진행됩니다.',
+      noticeId: 1,
+      isEssential: true,
+      noticeTypeCd: 'MEETING',
+    },
+  },
+
+  {
+    scheduleId: 3,
+    title: 'DUMMY TODO 3',
+    createdAt: '2024-11-30T09:00:00',
+    startDateTime: '2024-12-04T10:00:00',
+    endDateTime: '2024-12-10T11:00:00',
+    scheduleSourceTypeCd: 'TEAM',
+    scheduleStatusTypeCd: 'DONE',
+    isEssentialYn: 'Y',
+    isEnrollYn: 'Y',
+    chargeUser: {
+      userId: 1,
+      name: '김철수',
+      email: 'kim@example.com',
+      profileImgUrl: 'https://example.com/images/kim-profile.jpg',
+    },
+    createUser: {
+      userId: 2,
+      name: '박영희',
+      email: 'park@example.com',
+    },
+    noticeSummary: {
+      user: {
+        userId: 3,
+        name: '이민호',
+        email: 'lee@example.com',
+      },
+      createdAt: new Date('2024-11-19T16:00:00'),
+      title: '개발팀 주간 회의 일정 안내',
+      content: '개발팀의 주간 회의가 2024년 11월 20일 오전 10시에 진행됩니다.',
+      noticeId: 1,
+      isEssential: true,
+      noticeTypeCd: 'MEETING',
+    },
+  },
+]

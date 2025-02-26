@@ -1,0 +1,28 @@
+### 역할 추가 API saveRole
+POST http://localhost:9090/api/roles
+Content-Type: application/json
+
+{
+  "roleId": "ROLE_ADMIN",
+  "description": "프로"
+}
+
+
+### 역할 목록 리스트 가져오기
+GET http://localhost:9090/api/roles?dataType=simple
+Content-Type: application/json
+
+### 역할 지우기
+DELETE http://localhost:9090/api/roles/ROLE_SYSADMIN
+Content-Type: application/json
+
+### 유저리스트를 받아 역할 수정
+PUT http://localhost:9090/api/roles/ROLE_ADMIN
+Content-Type: application/json
+
+{
+  "userIds": [ 1, 2, 3 ]
+}
+
+### 역할에 속한 유저리스트 가져오기
+GET http://localhost:9090/api/roles/ROLE_USER/users

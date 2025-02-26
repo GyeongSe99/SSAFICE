@@ -1,0 +1,58 @@
+{
+  "properties": {
+    "noticeId": {
+      "type": "keyword"
+    },
+    "title": {
+      "type": "text",
+      "analyzer": "notice_title_analyzer"
+    },
+    "content": {
+      "type": "text",
+      "analyzer": "notice_content_analyzer"
+    },
+    "createdAt": {
+      "type": "date",
+      "format": "yyyy-MM-dd'T'HH:mm:ss||epoch_millis"
+    },
+    "startDateTime": {
+      "type": "date",
+      "format": "yyyy-MM-dd'T'HH:mm:ss||epoch_millis"
+    },
+    "endDateTime": {
+      "type": "date",
+      "format": "yyyy-MM-dd'T'HH:mm:ss||epoch_millis"
+    },
+    "isEssentialYn": {
+      "type": "keyword"
+    },
+    "noticeTypeCd": {
+      "type": "keyword"
+    },
+    "createUserId": {
+      "type": "keyword"
+    },
+    "createUserEmail": {
+      "type": "keyword"
+    },
+    "createUserProfileImgUrl": {
+      "type": "keyword"
+    },
+    "createUserName": {
+      "type": "text",
+      "analyzer": "notice_title_analyzer"
+    },
+    "channelId": {
+      "type": "keyword"
+    },
+    "channelName": {
+      "type": "keyword"
+    },
+    "mmTeamId": {
+      "type": "keyword"
+    },
+    "mmTeamName": {
+      "type": "keyword"
+    }
+  }
+}

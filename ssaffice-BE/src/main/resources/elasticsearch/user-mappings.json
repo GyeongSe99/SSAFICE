@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "userId": {
+      "type": "long"
+    },
+    "email": {
+      "type": "text",
+      "analyzer": "my_ngram_analyzer",
+      "search_analyzer": "my_ngram_analyzer",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "name": {
+      "type": "text",
+      "analyzer": "my_nori_ngram_analyzer",
+      "search_analyzer": "my_nori_ngram_analyzer",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "profileImgUrl": {
+      "type": "keyword"
+    }
+  }
+}

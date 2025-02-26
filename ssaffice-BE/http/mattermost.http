@@ -1,0 +1,3 @@
+### 역할 목록 리스트 가져오기
+GET http://localhost:9090/api/mm/users/autocomplete?name=abc
+Content-Type: application/json

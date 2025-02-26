@@ -1,0 +1,35 @@
+### 변수 설정
+@JWT = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjFAZ21haWwuY29tIiwiZXhwIjoxNzMyMTczMzM1fQ.fVeSqZ-mkVthA2x2OzeHYynygoUMGkNdQFNrs7BHzx8QR0xXDOaLvTE3SgFiandONZA3Tz1CsPE0O0WeWVI40g
+
+### 공지사항 등록
+POST http://localhost:9090/api/notice/admin
+Authorization: Bearer {{JWT}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="notice"; filename="notice.json"
+Content-Type: application/json
+
+< ./notice.json
+--boundary--
+
+
+### 공지 삭제
+DELETE http://localhost:9090/api/notice/1
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 공지 리스트 조회
+GET http://localhost:9090/api/notice?page=0&size=20&sort=createdAt,DESC
+Content-Type: application/json
+Authorization: Bearer {{JWT}}
+
+### 리스트 필터용
+@filterType = createdAt
+@start = 2024-11-01T09:00:00
+@end = 2024-11-30T18:00:00
+
+### 내가 작성한 공지사항 리스트 조회
+GET http://localhost:9090/api/notice/admin/my?sort=createdAt,desc&filterType={{filterType}}&start={{start}}&end={{end}}
+Content-Type: application/json
+Authorization: Bearer {{JWT}}

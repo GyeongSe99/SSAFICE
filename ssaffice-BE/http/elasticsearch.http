@@ -1,0 +1,44 @@
+### Add Notice
+POST http://localhost:9090/api/search/notice
+Content-Type: application/json
+
+{
+  "noticeId": 1,
+  "title": "한글 저장 테스트",
+  "content": "한글 저장 되나??",
+  "createdAt": "2024-11-12T10:00:00",
+  "startDateTime": "2024-11-15T09:00:00",
+  "endDateTime": "2024-11-15T17:00:00",
+  "isEssentialYn": "Y",
+  "noticeTypeCd": "GENERAL",
+  "createUserId": 1001,
+  "createUserEmail": "user@example.com",
+  "createUserName": "John Doe",
+  "createUserProfileImgUrl": "http://example.com/profile.jpg"
+}
+
+### delete Notice
+DELETE http://localhost:9090/api/search/notice/2
+
+### Save User
+POST http://localhost:9090/api/es/users
+Content-Type: application/json
+
+{
+  "userId" : 1,
+  "name": "홍길동",
+  "email": "hong@example.com",
+  "profileImgUrl": "http://example.com/profile.jpg"
+}
+
+### Delete User
+DELETE http://localhost:9090/api/es/users/1
+Content-Type: application/json
+
+### Search User
+POST http://localhost:9090/api/es/users/search
+Content-Type: application/json
+
+{
+  "keyword": "ji"
+}
